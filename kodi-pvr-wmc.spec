@@ -1,6 +1,6 @@
-%global commit ed67cfedc1dad168c167d86d20fe4d0934504633
+%global commit 6bf36aadb9313f5df84569c2bc9ceaa7093b7ebf
 %global short_commit %(c=%{commit}; echo ${c:0:7})
-%global commit_date 20170324
+%global commit_date 20170621
 
 %global kodi_addon pvr.wmc
 %global kodi_version 17.0
@@ -9,7 +9,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        1.4.9
+Version:        1.4.10
 Release:        1%{?dist}
 Summary:        Kodi's Windows Media Center client addon
 
@@ -56,6 +56,9 @@ cp -p %{SOURCE1} .
 
 
 %changelog
+* Tue Oct 03 2017 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:1.4.10-1
+- Update to 1.4.10
+
 * Sat Apr 29 2017 Mohamed El Morabity <melmorabity@fedorapeople.org> - 1:1.4.9-1
 - Update to latest stable release for Kodi 17
 
