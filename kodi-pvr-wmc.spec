@@ -1,6 +1,6 @@
-%global commit e0a9190c516c50dc68c24e8faad5afc4f7644f30
+%global commit 292a819f22189706473535e7c390d77a6c5d5cd7
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20180312
+%global commitdate 20180825
 
 %global kodi_addon pvr.wmc
 %global kodi_version 18.0
@@ -9,8 +9,8 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        2.2.5
-Release:        2%{?dist}
+Version:        2.3.3
+Release:        1%{?dist}
 Summary:        WMC PVR for Kodi
 
 License:        GPLv2+
@@ -23,7 +23,7 @@ BuildRequires:  kodi-devel >= %{kodi_version}
 BuildRequires:  kodi-platform-devel >= %{kodi_version}
 BuildRequires:  platform-devel
 Requires:       kodi >= %{kodi_version}
-ExclusiveArch:  i686 x86_64
+ExclusiveArch:  i686 x86_64 aarch64
 
 %description
 %{summary}.
@@ -49,6 +49,10 @@ ExclusiveArch:  i686 x86_64
 
 
 %changelog
+* Sat Sep 01 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:2.3.3-1
+- Update to 2.3.3
+- Enable aarch64 build
+
 * Thu Jul 26 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:2.2.5-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
