@@ -10,7 +10,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
 Version:        2.3.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        WMC PVR for Kodi
 
 License:        GPLv2+
@@ -49,6 +49,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Mon Mar 04 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:2.3.3-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Mon Oct 15 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:2.3.3-2
 - Enable arm build
 
