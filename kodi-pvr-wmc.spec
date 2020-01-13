@@ -1,21 +1,18 @@
-%global commit 292a819f22189706473535e7c390d77a6c5d5cd7
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20180825
-
 %global kodi_addon pvr.wmc
 %global kodi_version 18.0
+%global kodi_codename Leia
 
 Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        2.3.3
-Release:        4%{?dist}
+Version:        2.4.5
+Release:        1%{?dist}
 Summary:        WMC PVR for Kodi
 
 License:        GPLv2+
 URL:            https://github.com/kodi-pvr/%{kodi_addon}/
-Source0:        https://github.com/kodi-pvr/%{kodi_addon}/archive/%{shortcommit}/%{kodi_addon}-%{shortcommit}.tar.gz
+Source0:        %{url}/archive/%{version}-%{kodi_codename}/%{kodi_addon}-%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
@@ -30,7 +27,7 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %prep
-%autosetup -n %{kodi_addon}-%{commit}
+%autosetup -n %{kodi_addon}-%{version}-%{kodi_codename}
 
 
 %build
@@ -49,6 +46,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Mon Jan 13 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:2.4.5-1
+- Update to 2.4.5
+
 * Fri Aug 09 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:2.3.3-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
